@@ -1,7 +1,7 @@
 import React from 'react';
-import { THeroApi } from './Data/dataType.ts';
-import Clips from './utils/Clips.tsx';
-import SocialLink from './utils/SocialLink.tsx';
+import { THeroApi } from './Data/dataType';
+import Clips from './utils/Clips';
+import SocialLink from './utils/SocialLink';
 
 interface IHeroApi  {
     data: THeroApi

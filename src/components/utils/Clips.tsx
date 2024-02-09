@@ -1,5 +1,5 @@
 import React from 'react'
-import { TVideos } from '../Data/dataType.ts';
+import { TVideos } from '../Data/dataType';
 import {PlayIcon} from "@heroicons/react/24/solid";
 
 interface IVideos {
