@@ -32,7 +32,7 @@ import youtube from "../../assets/youtube.svg";
 import messenger from "../../assets/messenger.svg";
 import { THeroApi } from "./dataType";
 
-const heroapi:THeroApi = {
+const heroapi: THeroApi = {
   title: "Play With Electric Nike",
   subtitle: "Adapt 2.0 Sneakers",
   img: heroimg,

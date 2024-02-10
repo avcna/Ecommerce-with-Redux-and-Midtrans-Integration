@@ -1,12 +1,12 @@
-import React from 'react'
-import { TVideos } from '../Data/dataType';
-import {PlayIcon} from "@heroicons/react/24/solid";
+import React from "react";
+import { TVideos } from "../Data/dataType";
+import { PlayIcon } from "@heroicons/react/24/solid";
 
 interface IVideos {
-    data: TVideos
+  data: TVideos;
 }
-const Clips:React.FC<IVideos> = ({data}) => {
-    const {imgsrc, clip} = data;
+const Clips: React.FC<IVideos> = ({ data }) => {
+  const { imgsrc, clip } = data;
   return (
     <>
       <div className="relative h-28 w-32 rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 lg:w-28 md:w-24 sm:w-16 lg:h-24 md:h-20 sm:h-14">
@@ -29,7 +29,7 @@ const Clips:React.FC<IVideos> = ({data}) => {
         </video>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Clips;
