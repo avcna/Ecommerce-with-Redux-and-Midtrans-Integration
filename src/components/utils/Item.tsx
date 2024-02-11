@@ -11,32 +11,46 @@ const Item: React.FC<IItems> = ({ data }) => {
   return (
     <>
       <div
-        className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center justify-items-center rounded-[24px] h-[350px]`}
+        className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center rounded-[24px] h-[350px] py-[24px]`}
       >
-        <div className="grid items-center grid-cols-2">
-          <div className="order-last md:order-first flex flex-col">
+        <div className="">
+          <div className="order-last flex flex-col">
             <h1 className="text-slate-200 text-xl lg:text-lg md:text-base font-medium filter drop-shadow">
               {title}
             </h1>
             <p className="text-slate-200 filter drop-shadow text-base md:text-sm font-normal">
               {text}
             </p>
-
-            <h1 className="">${price}</h1>
-
-            <p>
-              <StarIcon className="icon-style text-slate-900 inline" />
-              {rating}
-            </p>
-
-            <button type="button" className="flex justify-center">
-              <ShoppingBagIcon className="icon-style text-slate-900 " />
-              {btn}
-            </button>
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2">
+              <p className="bg-[#ffffffd2] w-fit p-[4px] rounded-md">${price}</p>
+              <p className="text-[#FF9529] p-[4px] w-fit rounded-md bg-[#ffffffd2]">
+                <StarIcon className="icon-style text-[#FF9529] inline"/>
+                {rating}
+              </p></div>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  className="flex justify-center bg-white w-fit p-[4px] rounded-md"
+                >
+                  <ShoppingBagIcon className="icon-style text-slate-900 " />
+                </button>
+                <button
+                  type="button"
+                  className="flex justify-center bg-white w-fit p-[4px] rounded-md"
+                >
+                  {btn}
+                </button>
+              </div>
+            </div>
           </div>
 
           <div>
-            <img src={img} alt="img/item-img" className="w-[500px]" />
+            <img
+              src={img}
+              alt="img/item-img"
+              className="w-[280px] hover:rotate-[10deg] hover:scale-105 hover:transition-colors"
+            />
           </div>
         </div>
       </div>
