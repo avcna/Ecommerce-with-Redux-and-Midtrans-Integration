@@ -12,7 +12,7 @@ const Sales: React.FC<ISales> = ({ endpoint, className }) => {
   const { title, items } = endpoint;
   return (
     <>
-      <div className="mx-[24px]">
+      <div className="mx-[52px]">
         <Title title={title} />
         <div className={className}>
           {items?.map((item) => <Item data={item} key={item.id} />)}

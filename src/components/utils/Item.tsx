@@ -23,11 +23,14 @@ const Item: React.FC<IItems> = ({ data }) => {
             </p>
             <div className="flex flex-col gap-2">
               <div className="flex gap-2">
-              <p className="bg-[#ffffffd2] w-fit p-[4px] rounded-md">${price}</p>
-              <p className="text-[#FF9529] p-[4px] w-fit rounded-md bg-[#ffffffd2]">
-                <StarIcon className="icon-style text-[#FF9529] inline"/>
-                {rating}
-              </p></div>
+                <p className="bg-[#ffffffd2] w-fit p-[4px] rounded-md">
+                  ${price}
+                </p>
+                <p className="text-[#FF9529] p-[4px] w-fit rounded-md bg-[#ffffffd2]">
+                  <StarIcon className="icon-style text-[#FF9529] inline" />
+                  {rating}
+                </p>
+              </div>
               <div className="flex gap-2">
                 <button
                   type="button"
