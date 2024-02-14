@@ -11,7 +11,7 @@ const Item: React.FC<IItems> = ({ data }) => {
   return (
     <>
       <div
-        className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center rounded-[24px] h-[350px] py-[24px]`}
+        className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center rounded-[24px] h-[350px] py-[24px] hover:scale-105 hover:transition-colors`}
       >
         <div className="">
           <div className="order-last flex flex-col">
@@ -52,7 +52,7 @@ const Item: React.FC<IItems> = ({ data }) => {
             <img
               src={img}
               alt="img/item-img"
-              className="w-[280px] hover:rotate-[10deg] hover:scale-105 hover:transition-colors"
+              className="w-[230px] hover:rotate-[10deg] hover:scale-105 hover:transition-colors mt-8"
             />
           </div>
         </div>
