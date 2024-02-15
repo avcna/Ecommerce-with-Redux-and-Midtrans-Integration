@@ -64,5 +64,5 @@ export type TStory = {
 
 export type TFooterApi = {
   titles: { title: string }[];
-  links: { link: string }[];
+  links: { link: string }[][];
 };

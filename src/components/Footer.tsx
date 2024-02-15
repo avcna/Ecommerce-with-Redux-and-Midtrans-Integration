@@ -1,11 +1,32 @@
-import React from 'react'
+import React from "react";
+import { TFooterApi } from "./Data/dataType";
 
-const Footer:React.FC = () => {
-  return (
-    <div className='h-[100px] bg-theme'>
-      footer
-    </div>
-  )
+interface IFooter {
+  data: TFooterApi;
 }
 
-export default Footer
+const Footer: React.FC<IFooter> = ({ data }) => {
+  const { titles, links } = data;
+  return (
+    <div className="py-6 bg-theme text-white">
+      footer
+      <div className="grid grid-cols-3">
+        {titles.map((title) => (
+          <div className="font-bold text-[16px]">
+            {title.title.toUpperCase()}
+          </div>
+        ))}
+        {links.map((link) => (
+          <div>
+            {" "}
+            {link.map((item) => (
+              <p>{item.link}</p>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

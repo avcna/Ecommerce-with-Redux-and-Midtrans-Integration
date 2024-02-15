@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import {
+  footerAPI,
   heroapi,
   highlight,
   popularsales,
@@ -13,10 +14,12 @@ import Sales from "./components/Sales";
 import FlexContent from "./components/FlexContent";
 import Stories from "./components/Stories";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App relative">
+      <Navbar />
       <main>
         <Hero data={heroapi} />
         <Sales
@@ -30,7 +33,7 @@ function App() {
         />
         <FlexContent data={sneaker} />
         <Stories data={story} />
-        <Footer/>
+        <Footer data={footerAPI} />
       </main>
     </div>
   );
