@@ -12,6 +12,7 @@ import {
 import Sales from "./components/Sales";
 import FlexContent from "./components/FlexContent";
 import Stories from "./components/Stories";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         />
         <FlexContent data={sneaker} />
         <Stories data={story} />
+        <Footer/>
       </main>
     </div>
   );
