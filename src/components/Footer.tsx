@@ -9,7 +9,6 @@ const Footer: React.FC<IFooter> = ({ data }) => {
   const { titles, links } = data;
   return (
     <div className="py-6 bg-theme text-white">
-      footer
       <div className="grid grid-cols-3">
         {titles.map((title) => (
           <div className="font-bold text-[16px]">

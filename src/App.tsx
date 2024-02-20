@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Hero from "./components/Hero";
 import {
   footerAPI,
@@ -15,10 +14,12 @@ import FlexContent from "./components/FlexContent";
 import Stories from "./components/Stories";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Cart from "./components/Cart";
 
 function App() {
   return (
-    <div className="App relative">
+    <>
+      <Cart />
       <Navbar />
       <main>
         <Hero data={heroapi} />
@@ -35,7 +36,7 @@ function App() {
         <Stories data={story} />
         <Footer data={footerAPI} />
       </main>
-    </div>
+    </>
   );
 }
 
