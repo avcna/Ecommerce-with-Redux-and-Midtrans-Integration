@@ -5,8 +5,12 @@ import {
   MagnifyingGlassIcon,
   ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
+import {  useDispatch } from "react-redux";
+import { setOpenCart } from "../app/CartSlice";
 
 const Navbar: React.FC = () => {
+  const dispatch = useDispatch();
+  const onCartToggle =() => {dispatch(setOpenCart(true))};
   const [isScrolled, setIsScrolled] = useState(false);
   const onScrolling = () => {
     if (window.scrollY > 10) {
@@ -40,6 +44,7 @@ const Navbar: React.FC = () => {
           />
           <ShoppingBagIcon
             className={`${isScrolled && "text-black"} icon-style`}
+onClick={onCartToggle}
           />
           <div
             className={`rounded-[100%] ${
