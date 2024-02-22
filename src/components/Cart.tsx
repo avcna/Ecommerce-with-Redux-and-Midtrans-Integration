@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartCount from "./cart/CartCount";
 import CartItem from "./cart/CartItem";
 import CartEmpty from "./cart/CartEmpty";
-import { useSelector } from "react-redux";
-import { selectCartState } from "../app/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getTotal, selectCartItem, selectCartState, selectCartTotalAmount } from "../app/CartSlice";
 
 const Cart: React.FC = () => {
   const ifCartState = useSelector(selectCartState);
-
+  const dispatch = useDispatch();
+  const totalAmount = useSelector(selectCartTotalAmount);
+  const cartItems = useSelector(selectCartItem);
+  useEffect(() => {dispatch(getTotal())},[cartItems, dispatch]);
   return (
     <div
       className={`fixed top-0 bottom-0 blur-effect-theme w-full h-screen ${
@@ -16,8 +19,8 @@ const Cart: React.FC = () => {
     >
       <div className="blur-effect-theme w-1/2 absolute right-0">
         <CartCount>
-          {/* <CartItem /> */}
-          <CartEmpty />
+           <CartItem totalAmount={totalAmount}/>
+          {/* <CartEmpty /> */}
         </CartCount>
       </div>
     </div>
