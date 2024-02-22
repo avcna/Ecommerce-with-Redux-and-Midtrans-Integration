@@ -10,16 +10,15 @@ const Footer: React.FC<IFooter> = ({ data }) => {
   return (
     <div className="py-6 bg-theme text-white">
       <div className="grid grid-cols-3">
-        {titles.map((title) => (
-          <div className="font-bold text-[16px]">
+        {titles.map((title, i) => (
+          <div className="font-bold text-[16px]" key={i}>
             {title.title.toUpperCase()}
           </div>
         ))}
-        {links.map((link) => (
-          <div>
-            {" "}
-            {link.map((item) => (
-              <p>{item.link}</p>
+        {links.map((link, i) => (
+          <div key={i}>
+            {link.map((item, i) => (
+              <p key={i}>{item.link}</p>
             ))}
           </div>
         ))}

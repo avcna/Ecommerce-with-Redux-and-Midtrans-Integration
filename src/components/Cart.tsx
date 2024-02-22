@@ -6,10 +6,14 @@ import { useSelector } from "react-redux";
 import { selectCartState } from "../app/CartSlice";
 
 const Cart: React.FC = () => {
-  const ifCartState = useSelector(selectCartState); 
+  const ifCartState = useSelector(selectCartState);
 
   return (
-    <div className={`fixed top-0 bottom-0 blur-effect-theme w-full h-screen ${ifCartState? "visible":"invisible"}`}>
+    <div
+      className={`fixed top-0 bottom-0 blur-effect-theme w-full h-screen ${
+        ifCartState ? "visible" : "invisible"
+      }`}
+    >
       <div className="blur-effect-theme w-1/2 absolute right-0">
         <CartCount>
           {/* <CartItem /> */}

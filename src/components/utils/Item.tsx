@@ -4,9 +4,10 @@ import { TItems } from "../Data/dataType";
 
 interface IItems {
   data: TItems;
+  addToCart: React.MouseEventHandler<SVGSVGElement>;
 }
 
-const Item: React.FC<IItems> = ({ data }) => {
+const Item: React.FC<IItems> = ({ data, addToCart }) => {
   const { id, color, shadow, title, text, img, btn, rating, price } = data;
   return (
     <>
@@ -36,7 +37,10 @@ const Item: React.FC<IItems> = ({ data }) => {
                   type="button"
                   className="flex justify-center bg-white w-fit p-[4px] rounded-md"
                 >
-                  <ShoppingBagIcon className="icon-style text-slate-900 " />
+                  <ShoppingBagIcon
+                    className="icon-style text-slate-900 "
+                    onClick={addToCart}
+                  />
                 </button>
                 <button
                   type="button"

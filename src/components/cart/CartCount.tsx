@@ -9,7 +9,9 @@ interface ICartCount {
 
 const CartCount: React.FC<ICartCount> = ({ children }) => {
   const dispatch = useDispatch();
-  const onCartToggle =() => {dispatch(setOpenCart(false))};
+  const onCartToggle = () => {
+    dispatch(setOpenCart(false));
+  };
   return (
     <div className="h-screen">
       <div className="flex justify-between items-center bg-white w-full py-4 px-2">
@@ -24,7 +26,7 @@ const CartCount: React.FC<ICartCount> = ({ children }) => {
             </span>
           </p>
         </div>
-        <button className="bg-slate-900 p-1 rounded-md" >
+        <button className="bg-slate-900 p-1 rounded-md">
           <XMarkIcon className="w-[20px] text-white" />
         </button>
       </div>
