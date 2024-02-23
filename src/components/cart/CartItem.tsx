@@ -8,8 +8,8 @@ interface ICartItem {
 
 const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
   return (
-    <div className="h-screen">
-      <div className="p-4 flex flex-col gap-4 overflow-y-scroll">
+    <div className=" box-border">
+      <div className="p-4 flex flex-col gap-4 ">
         {cartItems.map((item) => {
           return (
             <div key={item.id} className="flex justify-between ">
