@@ -26,8 +26,9 @@ const Cart: React.FC = () => {
     >
       <div className="blur-effect-theme w-1/2 absolute right-0 h-screen overflow-y-scroll">
         <CartCount>
-          <CartItem totalAmount={totalAmount} cartItems={cartItems} />
-          {/* <CartEmpty /> */}
+          {cartItems.length>0? <CartItem totalAmount={totalAmount} cartItems={cartItems} />:<CartEmpty />}
+         
+         
         </CartCount>
       </div>
     </div>

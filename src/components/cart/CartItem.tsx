@@ -1,5 +1,6 @@
 import React from "react";
-import { Item } from "../../app/CartSlice";
+import { Item, decreaseQty, increaseQty } from "../../app/CartSlice";
+import { useDispatch } from "react-redux";
 
 interface ICartItem {
   totalAmount: number;
@@ -7,6 +8,7 @@ interface ICartItem {
 }
 
 const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
+  const dispatch = useDispatch();
   return (
     <div className=" box-border h-screen w-full flex flex-col justify-between"> 
       <div className="p-4 flex flex-col gap-4 ">
@@ -20,9 +22,9 @@ const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
                 <p className="font-semibold">{item.title}</p>
                 <p className="text-[14px]">{item.text}</p>
                 <div className="flex justify-between">
-                  <button className="bg-theme-cart text-white py-1 px-4 rounded-md">-</button>
+                  <button className="bg-theme-cart text-white py-1 px-4 rounded-md" onClick={()=>dispatch(decreaseQty(item))}>-</button>
                   <p>{item.cartQuantity}</p>
-                  <button className="bg-theme-cart text-white  py-1 px-4 rounded-md">+</button>
+                  <button className="bg-theme-cart text-white  py-1 px-4 rounded-md" onClick={()=>dispatch(increaseQty(item))}>+</button>
                 </div>
               </div>
               <div className="mx-auto "><p>${parseInt(item.price)*item.cartQuantity!}</p>

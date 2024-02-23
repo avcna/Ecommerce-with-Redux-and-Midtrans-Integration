@@ -1,7 +1,7 @@
 import { ChevronDoubleLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import React, { ReactNode } from "react";
-import { useDispatch } from "react-redux";
-import { setOpenCart } from "../../app/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart, selectCartTotalQuantity, setOpenCart } from "../../app/CartSlice";
 
 interface ICartCount {
   children: ReactNode;
@@ -9,6 +9,7 @@ interface ICartCount {
 
 const CartCount: React.FC<ICartCount> = ({ children }) => {
   const dispatch = useDispatch();
+  const items = useSelector(selectCartTotalQuantity)
   const onCartToggle = () => {
     dispatch(setOpenCart(false));
   };
@@ -22,11 +23,11 @@ const CartCount: React.FC<ICartCount> = ({ children }) => {
           <p>
             Your Cart{" "}
             <span className="bg-slate-900 p-1 rounded-md text-white">
-              (items)
+              ({items} items)
             </span>
           </p>
         </div>
-        <button className="bg-slate-900 p-1 rounded-md">
+        <button className="bg-slate-900 p-1 rounded-md" onClick={()=>dispatch(clearCart())}>
           <XMarkIcon className="w-[20px] text-white" />
         </button>
       </div>

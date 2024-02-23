@@ -35,9 +35,6 @@ const CartSlice = createSlice({
     setOpenCart: (state, action: PayloadAction<boolean>) => {
       state.cartState = action.payload;
     },
-    setCloseCart: (state, action: PayloadAction<boolean>) => {
-      state.cartState = action.payload;
-    },
     addToCart: (state, action: PayloadAction<Item>) => {
       const itemIndex = state.cartItem.findIndex(
         (item) => item.id === action.payload.id,
@@ -64,6 +61,25 @@ const CartSlice = createSlice({
       state.cartTotalQuantity = totalQty;
       state.cartTotalAmount = totalAmount;
     },
+    increaseQty: (state,action: PayloadAction<Item>) => {
+      const itemIndex = state.cartItem.findIndex(
+        (item) => item.id === action.payload.id,
+      );
+        state.cartItem[itemIndex].cartQuantity! += 1;
+    },
+    decreaseQty: (state, action: PayloadAction<Item>) =>{
+      const itemIndex = state.cartItem.findIndex(
+        (item) => item.id === action.payload.id,
+      );
+        state.cartItem[itemIndex].cartQuantity! -= 1;
+        if (state.cartItem[itemIndex].cartQuantity! <= 0){
+          delete state.cartItem[itemIndex].cartQuantity;
+          state.cartItem.splice(itemIndex, itemIndex+1);
+        }
+    },
+    clearCart:(state)=>{
+      state.cartItem = [];
+    }
   },
 });
 
@@ -73,6 +89,6 @@ export const selectCartTotalQuantity = (state: RootState) =>
   state.cart.cartTotalQuantity;
 export const selectCartTotalAmount = (state: RootState) =>
   state.cart.cartTotalAmount;
-export const { setOpenCart, setCloseCart, addToCart, getTotal } =
+export const { setOpenCart, addToCart, getTotal, increaseQty, decreaseQty, clearCart } =
   CartSlice.actions;
 export default CartSlice.reducer;
