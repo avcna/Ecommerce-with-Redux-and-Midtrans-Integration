@@ -25,7 +25,7 @@ const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
           );
         })}
       </div>
-      <div className="absolute bottom-0 p-4 bg-white w-full flex justify-between font-semibold">
+      <div className="sticky bottom-0 p-4 bg-white w-full flex justify-between font-semibold">
         <p>Total Amount :</p>
         <p>${totalAmount}</p>
       </div>
