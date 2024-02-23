@@ -8,7 +8,7 @@ interface ICartItem {
 
 const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
   return (
-    <div className=" box-border">
+    <div className=" box-border h-screen w-full flex flex-col justify-between"> 
       <div className="p-4 flex flex-col gap-4 ">
         {cartItems.map((item) => {
           return (
@@ -25,7 +25,7 @@ const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
                   <button className="bg-theme-cart text-white  py-1 px-4 rounded-md">+</button>
                 </div>
               </div>
-              <div className="mx-auto"><p>${parseInt(item.price)*item.cartQuantity!}</p>
+              <div className="mx-auto "><p>${parseInt(item.price)*item.cartQuantity!}</p>
               <button>Delete</button></div>
             </div>
           );
