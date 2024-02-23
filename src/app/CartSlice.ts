@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./Store";
 
-interface Item {
+export interface Item {
   id: string;
   title: string;
   text: string;
   rating: string;
-  btn: string;
+  btn?: string;
   img: string;
   price: string;
   color: string;
@@ -25,7 +25,7 @@ const initialState: CartState = {
   cartState: false,
   cartItem: [],
   cartTotalQuantity: 0,
-  cartTotalAmount: 0
+  cartTotalAmount: 0,
 };
 
 const CartSlice = createSlice({
@@ -49,24 +49,30 @@ const CartSlice = createSlice({
         state.cartItem.push(temp);
       }
     },
-    getTotal : (state) => {
-      let {totalAmount, totalQty} = state.cartItem.reduce((acc, item)=>{
-        const {price, cartQuantity} = item;
-        const totalAmt = parseInt(price)*(cartQuantity==undefined ? 0 : cartQuantity);
-        acc.totalAmount += totalAmt;
-        acc.totalQty += (cartQuantity==undefined ? 0 : cartQuantity);
-        return acc;
-      },{totalAmount:0, totalQty:0});
+    getTotal: (state) => {
+      let { totalAmount, totalQty } = state.cartItem.reduce(
+        (acc, item) => {
+          const { price, cartQuantity } = item;
+          const totalAmt =
+            parseInt(price) * (cartQuantity == undefined ? 0 : cartQuantity);
+          acc.totalAmount += totalAmt;
+          acc.totalQty += cartQuantity == undefined ? 0 : cartQuantity;
+          return acc;
+        },
+        { totalAmount: 0, totalQty: 0 },
+      );
       state.cartTotalQuantity = totalQty;
       state.cartTotalAmount = totalAmount;
     },
-    
   },
 });
 
 export const selectCartState = (state: RootState) => state.cart.cartState;
 export const selectCartItem = (state: RootState) => state.cart.cartItem;
-export const selectCartTotalQuantity = (state: RootState) => state.cart.cartTotalQuantity;
-export const selectCartTotalAmount = (state: RootState) => state.cart.cartTotalAmount;
-export const { setOpenCart, setCloseCart, addToCart, getTotal } = CartSlice.actions;
+export const selectCartTotalQuantity = (state: RootState) =>
+  state.cart.cartTotalQuantity;
+export const selectCartTotalAmount = (state: RootState) =>
+  state.cart.cartTotalAmount;
+export const { setOpenCart, setCloseCart, addToCart, getTotal } =
+  CartSlice.actions;
 export default CartSlice.reducer;
