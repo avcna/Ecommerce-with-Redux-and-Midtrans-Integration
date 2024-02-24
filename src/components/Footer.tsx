@@ -9,9 +9,9 @@ const Footer: React.FC<IFooter> = ({ data }) => {
   const { titles, links } = data;
   return (
     <div className="py-[50px] bg-theme text-white">
-      <div className="grid grid-cols-3 justify-items-center">
+      <div className="grid grid-cols-3 sm:text-[12px] xsm:text-[10px] justify-items-center">
         {titles.map((title, i) => (
-          <div className="font-bold text-[16px]" key={i}>
+          <div className="font-bold" key={i}>
             <p>{title.title.toUpperCase()}</p>
           </div>
         ))}

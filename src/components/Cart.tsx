@@ -24,7 +24,7 @@ const Cart: React.FC = () => {
         ifCartState ? "visible" : "invisible"
       }`}
     >
-      <div className="blur-effect-theme w-1/2 absolute right-0 h-screen overflow-y-scroll">
+      <div className="blur-effect-theme w-1/2 md:w-full sm:w-full xsm:w-full absolute right-0 h-screen overflow-y-scroll">
         <CartCount>
           {cartItems.length>0? <CartItem totalAmount={totalAmount} cartItems={cartItems} />:<CartEmpty />}
          

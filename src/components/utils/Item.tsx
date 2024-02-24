@@ -12,7 +12,7 @@ const Item: React.FC<IItems> = ({ data, addToCart }) => {
   return (
     <>
       <div
-        className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center rounded-[24px] h-[350px] py-[24px] hover:scale-105 hover:transition-colors`}
+        className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center rounded-[24px] h-[350px] py-[24px] hover:scale-105 hover:transition-colors px-[12px]`}
       >
         <div className="">
           <div className="order-last flex flex-col">
@@ -22,7 +22,7 @@ const Item: React.FC<IItems> = ({ data, addToCart }) => {
             <p className="text-slate-200 filter drop-shadow text-base md:text-sm font-normal">
               {text}
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 md:text-[12px]">
               <div className="flex gap-2">
                 <p className="bg-[#ffffffd2] w-fit p-[4px] rounded-md">
                   ${price}
@@ -56,7 +56,7 @@ const Item: React.FC<IItems> = ({ data, addToCart }) => {
             <img
               src={img}
               alt="img/item-img"
-              className="w-[230px] hover:rotate-[10deg] hover:scale-105 hover:transition-colors mt-8"
+              className="w-[230px] hover:rotate-[10deg] hover:scale-105 hover:transition-colors mt-8 sm:scale-90 xsm:scale-80"
             />
           </div>
         </div>
