@@ -1,8 +1,21 @@
-# Getting Started with Create React App
+# Setting Up the Application
+- clone the repo on your terminal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## set up the server
+- in the terminal, open backend folder with script `cd backend`
+- run the server with script `node index.ts`
 
-## Available Scripts
+## set up the client
+- in the terminal, run the client with script `npm start`
+- open `http://localhost:3000` in the web browser
+
+# How to use payment gateaway with Midtarns
+- click cart icon in the shoes item
+- click "my cart" item in the navbar
+- click checkout and select payment method
+- visit `https://docs.midtrans.com/docs/testing-payment-on-sandbox` to test the payment
+
+# Available Scripts
 
 In the project directory, you can run:
 
