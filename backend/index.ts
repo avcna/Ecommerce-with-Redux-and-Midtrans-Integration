@@ -25,6 +25,7 @@ let snap = new midtransClient.Snap({
 });
 
 app.post('/create-transaction', (req, res) => {
+   
     let parameter = {
         "transaction_details": {
             "order_id": req.body.order_id,
@@ -34,17 +35,22 @@ app.post('/create-transaction', (req, res) => {
             "secure": true
         },
         "customer_details": {
-            "name": req.body.customer_name
+            "name": req.body.customer_name,
+            "email": req.body.customer_email
         }
     };
+
+    //console.log(parameter);
 
     snap.createTransaction(parameter)
         .then((transaction) => {
             res.json({ transactionToken: transaction.token, redirect_url:transaction.redirect_url });
         })
         .catch((error) => {
+            console.error(error)
             res.status(500).json({ error: error.message });
         });
+
 });
 
 app.get("/", (req, res) => {

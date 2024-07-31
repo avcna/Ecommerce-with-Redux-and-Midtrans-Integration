@@ -25,7 +25,7 @@ const Sales: React.FC<ISales> = ({ endpoint, className }) => {
               key={item.id}
               addToCart={() => {
                 dispatch(addToCart(item));
-                console.log(res);
+                //console.log(res);
               }}
             />
           ))}
