@@ -15,17 +15,17 @@ const Item: React.FC<IItems> = ({ data, addToCart }) => {
         className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center rounded-[24px] h-[350px] py-[24px] hover:scale-105 hover:transition-colors px-[12px]`}
       >
         <div className="">
-          <div className="order-last flex flex-col">
-            <h1 className="text-slate-200 text-xl lg:text-lg md:text-base font-medium filter drop-shadow">
+          <div className="flex flex-col order-last">
+            <h1 className="text-xl font-medium text-slate-200 lg:text-lg md:text-base filter drop-shadow">
               {title}
             </h1>
-            <p className="text-slate-200 filter drop-shadow text-base md:text-sm font-normal">
+            <p className="text-base font-normal text-slate-200 filter drop-shadow md:text-sm">
               {text}
             </p>
             <div className="flex flex-col gap-2 md:text-[12px]">
               <div className="flex gap-2">
                 <p className="bg-[#ffffffd2] w-fit p-[4px] rounded-md">
-                  ${price}
+                  Rp {price}
                 </p>
                 <p className="text-[#ffb429] p-[4px] w-fit rounded-md bg-[#ffffffd2]">
                   <StarIcon className="icon-style text-[#ffb429] inline" />
