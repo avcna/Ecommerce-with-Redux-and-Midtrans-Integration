@@ -22,7 +22,7 @@ const CartItem: React.FC<ICartItem> = ({ cartItems, totalAmount }) => {
       console.log(response.data.redirect_url);
       window.location.href = response.data.redirect_url;
     } catch (error) {
-      alert("Payment failed");
+      alert("Payment failed. Make sure you have integrated the server.");
     }
   };
   return (
