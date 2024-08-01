@@ -11,7 +11,7 @@
 
 # How to use payment gateaway with Midtrans
 - click cart icon in the shoes item
-- click "my cart" item in the navbar
+- click "my cart" icon in the navbar
 - click checkout and select payment method
 - visit `https://docs.midtrans.com/docs/testing-payment-on-sandbox` to test the payment
 
