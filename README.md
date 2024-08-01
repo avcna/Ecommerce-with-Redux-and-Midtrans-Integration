@@ -9,7 +9,7 @@
 - in the terminal, run the client with script `npm start`
 - open `http://localhost:3000` in the web browser
 
-# How to use payment gateaway with Midtarns
+# How to use payment gateaway with Midtrans
 - click cart icon in the shoes item
 - click "my cart" item in the navbar
 - click checkout and select payment method
